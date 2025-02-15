@@ -1,0 +1,222 @@
+.tile-wrapper:hover {
+    background-color: white;
+    cursor: pointer;
+    transform: scale(1.003);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 0;
+    
+}
+.tile-wrapper{
+    width: calc(100%-100px);
+    padding: 32px 0;
+    padding-right: 20px;
+    background-color: #f8f8f8;
+    color: #737477;
+    display: flex;
+    border-radius: 10px;
+    transition: background-color 0.8s cubic-bezier(.35,0,0,1) , transform 0.8s cubic-bezier(.35 , 0 , 0 , 1) ;
+    border-bottom: 1px solid #dddede;
+
+    
+}
+
+
+.eventImg{
+    position: relative;
+}
+
+.eventImg img{
+    border-radius: 10px;
+    margin: 0 20px;
+    height: 115px;
+    width: 160px;
+
+}
+
+
+.eventImg .Imglogo{
+    position: absolute;
+    z-index:1;
+    top: 0;
+    left: 10%;
+    border-radius: 10px;
+    height: 115px;
+    width: 160px;
+    border: none;
+    outline: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color:rgba(0, 0, 0,  .5);
+   
+}
+
+.eventImg .Imglogo:has(img:not([src])){
+    background-color: transparent;
+}
+
+
+.Imglogo .ImageLogo{
+    width: 88px;
+    height: auto;
+}
+.ImageLogo:not([src]){
+    display: none;
+}
+
+
+.eventContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.eventDate{
+    display: flex;
+    align-items:normal;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 20px;
+    width: 18%;
+    box-sizing: border-box;
+}
+.mainContent{
+    width: 60%;
+}
+.eventType{
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight:700;
+}
+
+.mainContent .detailsCont h2{
+    margin: 0;
+    padding: 2px 0 0 0;
+    color: #1a1919;
+}
+.mainContent .detailsCont p{
+    margin: 0;
+    padding: 10px 0 12px 0;
+}
+
+.eventPlace img{
+    height: 16px;
+    width: 16px;
+    padding-right: 8px;
+    border-color: white;
+    outline: white;
+}
+
+.eventPlace img:not([src]){
+    display: none;
+}
+
+.eventPlace{
+    display: flex;
+    align-items: center;
+}
+
+
+.startDate , .endDate , .dash{
+    font-size: 30px;
+    color: black;
+    font-weight: 700;
+    display: flex;
+    align-items:end;
+    margin: 0;
+    padding: 0 8px;
+}
+.dash{
+    padding: 5px;
+}
+.startMonth, .endMonth{
+    color: black;
+    font-weight: 500;
+    margin: 0 13px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.eventDate .monthCont{
+    box-sizing: content-box;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width:500px){
+    .tile-wrapper{
+        box-sizing: border-box;
+    }
+    .detailsCont p{
+        display: none;
+    }
+    .eventContent{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .eventImg{
+        height: auto;
+        position: relative;
+        margin: 0 5px;
+        width: 102px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .eventImg Img , .Imglogo{
+        width: 102px;
+        height: 102px;
+    }
+    
+   .eventImg .Imglogo{
+    width: 102px;
+    height: 102px;
+    left: 0;
+   }
+   .Imglogo .ImageLogo{
+    width: 70px;
+    height: auto;
+   }
+   .mainContent{
+    width: 100%;
+   }
+   .detailsCont h2{
+    font-size: 14px;
+   }
+
+   .eventPlace{
+    font-size: 0.8em;
+   }
+   .eventDate{
+    font-size: .8em;
+    display: flex;
+    width: 100%;
+    justify-content: start;
+   }
+   .eventDate .startDate , .dash , .endDate{
+    font-size: .8em;
+   }
+   
+   .eventDate .monthCont{
+    display: flex;
+    justify-content: start;
+   }
+   .monthCont span{
+    display: flex;
+    justify-content: start;
+   }
+   .monthCont .startMonth{
+    margin-left: 0;
+   }
+   .monthCont:has(span:empty){
+    margin: 0 25px;
+   }
+
+}
